@@ -5,6 +5,7 @@ import { Layout } from './components/layout/Layout';
 import { LandingPage } from './pages/LandingPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { LoginPage } from './pages/LoginPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,6 +27,7 @@ export const App = () => {
       >
         <BrowserRouter>
           <Routes>
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Layout />}>
               <Route index element={<LandingPage />} />
               <Route path="about" element={<AboutPage />} />

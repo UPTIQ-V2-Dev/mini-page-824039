@@ -1,2 +1,4 @@
 export { default as authController } from './auth.controller.ts';
 export { default as userController } from './user.controller.ts';
+export { default as featureController } from './feature.controller.ts';
+export { default as contactController } from './contact.controller.ts';

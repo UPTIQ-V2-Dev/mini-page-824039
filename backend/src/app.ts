@@ -5,6 +5,7 @@ import { errorConverter, errorHandler } from './middlewares/error.ts';
 import { authLimiter } from './middlewares/rateLimiter.ts';
 import xss from './middlewares/xss.ts';
 import routes from './routes/v1/index.ts';
+import publicRoutes from './routes/public/index.ts';
 import ApiError from './utils/ApiError.ts';
 import compression from 'compression';
 import cors from 'cors';
@@ -55,6 +56,9 @@ app.get('/', (req, res) => {
 app.get('/api/v1/health', (req, res) => {
     res.send('OK');
 });
+
+// public api routes
+app.use('/api', publicRoutes);
 
 // v1 api routes
 app.use('/api/v1', routes);

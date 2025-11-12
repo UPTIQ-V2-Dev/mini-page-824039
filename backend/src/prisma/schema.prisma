@@ -48,3 +48,22 @@ enum TokenType {
   RESET_PASSWORD
   VERIFY_EMAIL
 }
+
+model Feature {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  icon        String
+  color       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactForm {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+}
